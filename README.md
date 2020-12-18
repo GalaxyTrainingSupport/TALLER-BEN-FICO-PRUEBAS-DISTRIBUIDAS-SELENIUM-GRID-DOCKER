@@ -1,6 +1,4 @@
-Pruebas Distribuidas con Selenium WebDriver, Grid & Docker
-
-## Documentation
+## Pruebas Distribuidas con Selenium WebDriver, Grid & Docker
 
 Narrative documentation:
 
