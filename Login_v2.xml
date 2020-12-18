@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite Login " parallel="tests">
+
+	<test name="Test On Opera">
+		<parameter name="BrowserName" value="opera"></parameter>
+		<classes>
+			<class name="edu.pe.galaxy.Login_v2" />
+		</classes>
+	</test>
+
+	<test name="Test On Chrome">
+		<parameter name="BrowserName" value="chrome"></parameter>
+		<classes>
+			<class name="edu.pe.galaxy.Login_v2" />
+		</classes>
+	</test>
+
+	<test name="Test On Firefox">
+		<parameter name="BrowserName" value="firefox"></parameter>
+		<classes>
+			<class name="edu.pe.galaxy.Login_v2" />
+		</classes>
+	</test>
+
+</suite>

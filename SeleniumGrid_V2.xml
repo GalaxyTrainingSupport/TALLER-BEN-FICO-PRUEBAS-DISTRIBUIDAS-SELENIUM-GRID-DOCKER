@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Grid Docker" parallel="tests">
+	
+	<test name="Chrome Test">
+		<parameter name="platformName" value="LINUX" />
+		<parameter name="browserVersion" value="87.0.4280.66" />
+		<parameter name="browserName" value="chrome" />
+		<classes>
+			<class name="edu.pe.galaxy.SeleniumGrid_V2" />
+		</classes>
+	</test>
+	
+	<test name="Firefox Test">
+		<parameter name="platformName" value="LINUX" />
+		<parameter name="browserVersion" value="83.0" />
+		<parameter name="browserName" value="firefox" />
+		<classes>
+			<class name="edu.pe.galaxy.SeleniumGrid_V2" />
+		</classes>
+	</test>
+	
+	<test name="Opera Test">
+		<parameter name="platformName" value="LINUX" />
+		<parameter name="browserVersion" value="73.0.3856.257" />
+		<parameter name="browserName" value="opera" />
+		<classes>
+			<class name="edu.pe.galaxy.SeleniumGrid_V2" />
+		</classes>
+	</test>
+</suite>
