@@ -1,4 +1,4 @@
-# Taller Benefico: Pruebas Distribuidas con Selenium WebDriver, Grid & Docker
+Pruebas Distribuidas con Selenium WebDriver, Grid & Docker
 
 ## Documentation
 
