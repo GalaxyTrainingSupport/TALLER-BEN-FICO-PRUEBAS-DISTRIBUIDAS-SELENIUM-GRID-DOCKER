@@ -1,0 +1,63 @@
+version: "3"
+services:
+
+  hub:
+    image: selenium/hub
+    ports:
+      - "4444:4444"
+
+    environment:
+      GRID_MAX_SESSION: 16
+      GRID_BROWSER_TIMEOUT: 3000
+      GRID_TIMEOUT: 3000
+
+  chrome:
+    image: selenium/node-chrome-debug
+    container_name: web-galaxy_chrome
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+      NODE_MAX_SESSION: 6
+      NODE_MAX_INSTANCES: 6
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "9001:5900"
+    links:
+      - hub
+
+  firefox:
+    image: selenium/node-firefox-debug
+    container_name: web-galaxy_firefox
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+      NODE_MAX_SESSION: 7
+      NODE_MAX_INSTANCES: 7
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "9002:5900"
+    links:
+      - hub
+
+  opera:
+    image: selenium/node-opera-debug
+    container_name: web-galaxy_opera
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+      NODE_MAX_SESSION: 8
+      NODE_MAX_INSTANCES: 8
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "9003:5900"
+    links:
+      - hub
